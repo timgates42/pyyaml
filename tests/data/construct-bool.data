@@ -5,5 +5,5 @@ option: on
 
 
 but:
-    y: is a string
-    n: is a string
+    "y": is a string
+    "n": is a string
