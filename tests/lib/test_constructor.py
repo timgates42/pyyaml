@@ -25,10 +25,10 @@ def _make_objects():
         pass
 
     class MyTestClass1:
-        def __init__(self, x, y=0, z=0):
-            self.x = x
-            self.y = y
-            self.z = z
+        def __init__(self, posx, posy=0, posz=0):
+            self.posx = posx
+            self.posy = posy
+            self.posz = posz
         def __eq__(self, other):
             if isinstance(other, MyTestClass1):
                 return self.__class__, self.__dict__ == other.__class__, other.__dict__
@@ -49,8 +49,8 @@ def _make_objects():
         yaml_dumper = MyDumper
         yaml_tag = "!tag2"
         def from_yaml(cls, constructor, node):
-            x = constructor.construct_yaml_int(node)
-            return cls(x=x)
+            posx = constructor.construct_yaml_int(node)
+            return cls(posx=posx)
         from_yaml = classmethod(from_yaml)
         def to_yaml(cls, representer, native):
             return representer.represent_scalar(cls.yaml_tag, str(native.x))
@@ -61,9 +61,9 @@ def _make_objects():
         def from_yaml(cls, constructor, node):
             mapping = constructor.construct_mapping(node)
             if '=' in mapping:
-                x = mapping['=']
+                posx = mapping['=']
                 del mapping['=']
-                mapping['x'] = x
+                mapping['posx'] = posx
             return cls(**mapping)
         from_yaml = classmethod(from_yaml)
         def to_yaml(cls, representer, native):
