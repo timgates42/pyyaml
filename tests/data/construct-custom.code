@@ -1,10 +1,10 @@
 [
-    MyTestClass1(x=1),
-    MyTestClass1(x=1, y=2, z=3),
-    MyTestClass2(x=10),
-    MyTestClass2(x=10, y=20, z=30),
-    MyTestClass3(x=1),
-    MyTestClass3(x=1, y=2, z=3),
-    MyTestClass3(x=1, y=2, z=3),
+    MyTestClass1(posx=1),
+    MyTestClass1(posx=1, posy=2, posz=3),
+    MyTestClass2(posx=10),
+    MyTestClass2(posx=10, posy=20, posz=30),
+    MyTestClass3(posx=1),
+    MyTestClass3(posx=1, posy=2, posz=3),
+    MyTestClass3(posx=1, posy=2, posz=3),
     YAMLObject1(my_parameter='foo', my_another_parameter=[1,2,3])
 ]
